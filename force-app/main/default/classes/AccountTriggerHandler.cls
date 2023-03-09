@@ -27,7 +27,7 @@ public with sharing class AccountTriggerHandler {
             c.AccountId = a.Id;
             c.Description = 'Please follow up with this new Account and send them a Welcome Package.';
 
-            //Get the email address for the Account owner
+            //Get the email address for the Account owners
             User u = [SELECT Id, Email FROM User WHERE Id = :runningUserId];
             c.Staff_Email_Address__c = u.Email;
             insert c;
